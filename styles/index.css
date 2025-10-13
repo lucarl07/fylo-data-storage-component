@@ -7,10 +7,59 @@
   --neutral-grayish-blue: hsl(229, 7%, 55%);
 
   /* Body Copy: */
-  --body-font-size: 14px;
+  --body-font-size: 0.875rem;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url('../assets/fonts/Raleway-VariableFont_wght.ttf');
+  src: url(../assets/fonts/Raleway-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../assets/images/bg-mobile.png);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 1rem;
+}
+
+.container {
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  width: 20.375rem;
+  background-color: var(--neutral-dark-blue);
+}
+
+.about-fylo {
+  gap: 2rem;
+  border-top-right-radius: 5rem;
+}
+.about-fylo .logo {
+  width: 55%;
+}
+.about-fylo .icons {
+  display: flex;
+  gap: 1rem;
+}
+.about-fylo .icons .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--neutral-dark-blue-2);
 }
