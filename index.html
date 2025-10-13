@@ -27,9 +27,12 @@
       <label for="storage" class="notice">
         You’ve used <strong class="used">815 GB</strong> of your storage
       </label>
-      <meter id="storage" class="storage" max="1000" value="815">
-        815 GB of 1000 GB
-      </meter>
+      <div class="meter-wrapper">
+        <meter id="storage" class="storage" min="0" max="1000" optimum="815" value="815" title="GB">
+          815 GB of 1000 GB
+        </meter>
+        <span class="meter-dot"></span>
+      </div>
       <label for="storage" class="minmax">
         <span>0 GB</span>
         <span>1000 GB</span>

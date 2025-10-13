@@ -79,8 +79,9 @@ label {
 .storage-info .notice {
   margin-block-end: 1rem;
 }
-.storage-info meter {
+.storage-info .meter-wrapper {
   width: 100%;
+  position: relative;
 }
 .storage-info .minmax {
   display: flex;
@@ -89,6 +90,31 @@ label {
   width: 100%;
   font-size: .75rem;
   font-weight: 700;
+}
+
+.storage, .storage::-webkit-meter-bar {
+  width: 100%;
+  border-radius: .5rem;
+  background: var(--neutral-dark-blue-2);
+}
+.storage:-moz-meter-optimum::-moz-meter-bar,
+.storage::-webkit-meter-optimum-value {
+  border: 2px solid var(--neutral-dark-blue-2);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  background: var(--primary-gradient);
+}
+
+.meter-dot {
+  position: absolute;
+  top: 50%;
+  left: calc((815 - 35) / 1000 * 100%);
+  transform: translate(-50%, -50%);
+  width: 0.6rem;
+  height: 0.6rem;
+  background: white;
+  border-radius: 100%;
+  pointer-events: none;
 }
 
 .info-badge {
