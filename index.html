@@ -8,13 +8,28 @@
   <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-
-  You’ve used 815 GB of your storage
-
-  185 GB Left
-  
-  0 GB
-  1000 GB
-
+  <section class="fylo-actions">
+    <img src="./assets/images/logo.svg" alt="Fylo logo" class="logo">
+    <div class="icons" role="group">
+      <img src="./assets/images/icon-document.svg" alt="Document icon">
+      <img src="./assets/images/icon-folder.svg" alt="Folder icon">
+      <img src="./assets/images/icon-upload.svg" alt="Upload icon">
+    </div>
+  </section>
+  <section class="storage-info">
+    <label for="storage">
+      You’ve used <b class="used">815 GB</b> of your storage
+    </label>
+    <meter id="storage" class="storage" max="1000" value="815">
+      815 GB of 1000 GB
+    </meter>
+    <label for="storage" class="minmax">
+      <span>0 GB</span>
+      <span>1000 GB</span>
+    </label>
+    <output for="storage">
+      <strong class="remaining">185</strong> GB LEFT
+    </output>
+  </section>
 </body>
 </html>
