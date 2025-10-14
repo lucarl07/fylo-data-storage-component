@@ -152,10 +152,10 @@ label {
     background-repeat: no-repeat;
   }
 
-  .about-fylo {
+  .container {
     width: 21.875rem;
   }
-  .about-fylo .logo {
+  .container .logo {
     width: 45%;
   }
 }
