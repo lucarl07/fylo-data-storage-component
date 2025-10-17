@@ -41,18 +41,46 @@ Users should be able to:
 
 ### What I learned
 
-With this challenge, I've learned how to create triangles in CSS based off of pseudo-elements. Styling the triangle to match the desktop design was mildly confusing at first, since I've initially used code from a project with a different approach. However, I got to the desired result by tweaking around with positional properties ("left", "right", etc.) and even removing some of them.
+With this challenge, I've found out about the HTML meter element and how to style it cross-platform-wise (since some selectors are not standardized among browsers).
 
 ```css
-/* ... */
+.storage, .storage::-webkit-meter-bar {
+  width: 100%;
+  height: 1.25rem;
+  border-radius: .75rem;
+  background: hsl(228, 59%, 18%);
+}
+.storage:-moz-meter-optimum::-moz-meter-bar,
+.storage::-webkit-meter-optimum-value {
+  border: 2px solid hsl(228, 59%, 18%);
+  border-radius: .75rem;
+  box-sizing: border-box;
+  background: var(--primary-gradient);
+}
 
+.meter-dot {
+  position: absolute;
+  top: 49%;
+  left: calc((815 - 70) / 1000 * 100%);
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 100%;
+  pointer-events: none;
+}
+```
+
+I've also learned how to create triangles in CSS based off of pseudo-elements.
+
+```css
 @media screen and (min-width: 1024px) {
   /* ... */
 
   .info-badge::after {
     content: '';
     position: absolute;
-    bottom: -1.5rem; /* Position it below the bubble */
+    bottom: -1.5rem;
     right: 0;
     width: 0;
     height: 0;
