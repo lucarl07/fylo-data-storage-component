@@ -80,6 +80,10 @@ label {
 .storage-info .notice {
   margin-block-end: 1rem;
 }
+.storage-info .wrapper {
+  width: 100%;
+  position: relative; 
+}
 .storage-info .minmax {
   display: flex;
   justify-content: space-between;
@@ -89,23 +93,38 @@ label {
   font-weight: 700;
 }
 
-.storage-info .wrapper {
-  width: 100%;
-  position: relative; 
+/* Meter styles for non-WebKit browsers: */
+@supports not selector(::-webkit-scrollbar){
+  .storage {
+    width: 100%;
+    height: 100%;
+    border-radius: .75rem;
+    background: var(--neutral-dark-blue-2);
+  }
+  .storage:-moz-meter-optimum::-moz-meter-bar {
+    border: 2px solid var(--neutral-dark-blue-2);
+    border-radius: 100px;
+    box-sizing: border-box;
+    background: var(--primary-gradient);
+  }
 }
-.storage, .storage::-webkit-meter-bar {
-  width: 100%;
-  height: 100%;
-  border-radius: .75rem;
-  background: var(--neutral-dark-blue-2);
-}
-.storage:-moz-meter-optimum::-moz-meter-bar,
-.storage::-webkit-meter-optimum-value {
-  initial-value: 81.5%;
-  border: 2px solid var(--neutral-dark-blue-2);
-  border-radius: 100px;
-  box-sizing: border-box;
-  background: var(--primary-gradient);
+
+/* Meter styles for WebKit browsers: */
+@supports selector(::-webkit-scrollbar) {
+  .storage {
+    width: 100%;
+    height: 2rem;
+    border-radius: 100px;
+  }
+  .storage::-webkit-meter-bar {
+    border-radius: 100px;
+    background: var(--neutral-dark-blue-2);
+  }
+  .storage::-webkit-meter-optimum-value {
+    border: 2px solid var(--neutral-dark-blue-2);
+    border-radius: 100px;
+    background: var(--primary-gradient);
+  }
 }
 
 .meter-dot {
