@@ -188,7 +188,7 @@ label {
   .info-badge::after {
     content: '';
     position: absolute;
-    bottom: -1.5rem; /* Position it below the bubble */
+    bottom: -1.5rem;
     right: 0;
     width: 0;
     height: 0;
