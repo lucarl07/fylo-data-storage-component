@@ -80,7 +80,7 @@ label {
 .storage-info .notice {
   margin-block-end: 1rem;
 }
-.storage-info .meter-wrapper {
+.storage-info .wrapper {
   width: 100%;
   position: relative;
 }
